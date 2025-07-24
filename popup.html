@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roblox Account Recovery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0615;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #1b132c;
+      padding: 40px;
+      border-radius: 16px;
+      width: 600px;
+      box-shadow: 0 0 20px #a14cff99;
+      text-align: center;
+    }
+
+    h1 {
+      color: #d58fff;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .warning {
+      font-size: 0.9rem;
+      color: #ff5ebc;
+      margin-bottom: 25px;
+    }
+
+    input {
+      padding: 12px;
+      width: 70%;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      background-color: #2e254a;
+      color: #fff;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin-left: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: #8000ff;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 12px #8000ff;
+    }
+    button:hover {
+      background: #a14cff;
+      box-shadow: 0 0 25px #a14cff;
+      transform: scale(1.05);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 14px;
+      background-color: #2a2344;
+      border-radius: 20px;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+
+    #progressBar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, #d58fff, #8000ff);
+      border-radius: 20px;
+      transition: width 0.4s ease;
+    }
+
+    #currentStatus, #progressPercent {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    #successMessage h2 {
+      color: #7effb2;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💜 Roblox Recovery Center</h1>
+    <div class="warning">
+      ⚠️ Please do not uninstall this extension while recovery is in progress or your session will be lost.
+    </div>
+
+    <div id="inputSection">
+      <input type="text" id="username" placeholder="Enter your Roblox Username" />
+      <button id="recoverBtn">Start Recovery</button>
+    </div>
+
+    <div id="recoverySection" style="display:none;">
+      <p id="currentStatus">Contacting Roblox servers...</p>
+      <div class="progress-bar">
+        <div id="progressBar"></div>
+      </div>
+      <p id="progressPercent">0%</p>
+    </div>
+
+    <div id="successMessage" style="display:none;">
+      <h2>✅ Recovery Complete</h2>
+      <p>Your Roblox account has been successfully restored. Keep this extension installed to maintain recovery access.</p>
+      <button id="resetBtn">Restart</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
